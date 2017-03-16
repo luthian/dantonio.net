@@ -1,0 +1,2 @@
+jQuery(document).ready(function($){var t=$(".navbar-sticky"),a=t.offset().top,o=function(){var o=$(window).scrollTop();o>a?t.addClass("stick"):t.removeClass("stick")},e=function(){$(".parallax").each(function(){var t=$(this).attr("parallax-speed");if(t){var a="-"+window.pageYOffset/t+"px";$(this).css("background-position","center "+a)}})};o(),$(window).scroll(function(){o(),e()}),$(document).delegate('*[data-toggle="lightbox"]',"click",function(t){return t.preventDefault(),$(this).ekkoLightbox({always_show_close:!0})})});
+//# sourceMappingURL=./main-min.js.map

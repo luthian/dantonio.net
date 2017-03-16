@@ -1,0 +1,25 @@
+<div class="sidebar-entries">
+  <div class="sidebar-heading">{exp:streeng capitalize="yes"}{embed:channel}{/exp:streeng} Archives</div>
+  <div class="sidebar-contents">
+		{exp:channel:month_links channel="{embed:channel}" status="open|Draft" disable="categories|category_fields|custom_fields|member_data|pagination"}
+      {year_heading}
+        <div>{year}</div>
+      {/year_heading}
+      <div><a data-toggle="collapse" href="#monthContainer-{month}" aria-expanded="false" aria-controls="monthContainer" class="collapsed"><i class="fa fa-play"></i>&nbsp;&nbsp;{month}</a></div>
+  				<div class="collapse" id="monthContainer-{month}">
+        {exp:channel:entries channel="{embed:channel}" orderby="date" sort="desc" year="{year}" month="{month_num}" status="open|Draft" disable="{snippet_channel_disabled_fields}" dynamic="no"}
+				  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
+    				<div {if status == "Draft"} class="entry-draft" {/if}><a href="{url_title_path='{embed:title_path}'}">{title}<div class="sidebar-entry-date">{edit_date format="%l, %M %j"}</div></a></div>
+      		{/if}
+        {/exp:channel:entries}
+    		  </div>
+    {/exp:channel:month_links}
+  </div>
+
+  <div class="sidebar-heading">{exp:streeng capitalize="yes"}{embed:channel}{/exp:streeng} Categories</div>
+  <div class="sidebar-contents">
+    {exp:channel:categories channel="{embed:channel}" disable="category_fields" show_empty="no" cssClass="sidebar-categories-list"}
+        <a {if category_description}alt="{category_description}" title="{category_description}"{/if} href="{path='{embed:index_path}'}">{category_name}</a>
+    {/exp:channel:categories}
+  </div>
+</div>

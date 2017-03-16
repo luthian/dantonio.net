@@ -1,0 +1,63 @@
+{layout="layouts/.site-layout" title="David D'Antonio&rsquo;s Portfolio", tagline="Good design is mostly invisible" description="David D'Antonio's portfolio where he describes various projects and shows off his work."}
+
+		<div class="row topspace">
+  		<div class="col-sm-3">
+    		{embed="embeds/sidebar" channel="portfolio" title_path="portfolio/piece" index_path="portfolio/index"}
+  		</div>
+			<div class="col-sm-8 col-sm-offset-1">
+        {exp:reading_time}
+  				{exp:channel:entries channel="portfolio" orderby="date" sort="desc" limit="5" paginate="bottom" track_views="two" status="open|Draft" disable="{snippet_channel_disabled_fields}" {if segment_2}category={segment_2}{/if}}
+  				  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
+       				<article class="post">
+      					<header class="entry-header">
+       						<h1 class="entry-title{if status == "Draft"} entry-draft {/if}"><a href="{title_permalink="portfolio/piece"}" rel="bookmark">{title}</a></h1>
+                    {snippet_blog_meta}
+      					</header> 
+      					<div class="entry-content clearfix">
+          				{if pf_featured_image}
+          				  {pf_featured_image}
+          						<a href="{title_permalink="portfolio/piece"}" rel="bookmark"><img class="entry-image-small img-rounded pull-left" title="{title}" alt="{title}" src="{url:small}"></a>
+      						  {/pf_featured_image}
+      						{/if}
+      						<p>
+        						{exp:chopper append="&#8230;" words="75" cutoff="<END/>" allow="<a><em><strong>"}
+                      {exp:low_replace find="[pull-quote]" replace=""}
+                        {pf_portfolio_description}
+                      {/exp:low_replace}
+                    {/exp:chopper}
+                    <a href="{url_title_path="portfolio/piece"}" class="more-link">Continue reading &raquo;</a>
+                  </p>
+      					</div> 
+      				</article><!-- #post-## -->
+              {paginate}
+                {pagination_links}
+            		<center class="">
+            			<ul class="pagination">
+                    {first_page}
+                      <li><a href="{pagination_url}" class="page-first">First Page</a></li>
+                    {/first_page}
+              
+                    {previous_page}
+                      <li><a href="{pagination_url}" class="page-previous">&laquo;</a></li>
+                    {/previous_page}
+              
+                    {page}
+                      <li {if current_page}class="active"{/if}><a href="{pagination_url}">{pagination_page_number}</a></li>
+                    {/page}
+              
+                    {next_page}
+                      <li><a href="{pagination_url}" class="page-next">&raquo;</a></li>
+                    {/next_page}
+              
+                    {last_page}
+                      <li><a href="{pagination_url}" class="page-last">Last Page</a></li>
+                    {/last_page}
+            			</ul>
+            		</center>
+                {/pagination_links}
+              {/paginate}
+            {/if}
+  				{/exp:channel:entries}
+        {/exp:reading_time}
+			</div> 
+		</div>

@@ -1,0 +1,89 @@
+{layout="layouts/.site-layout" title="David D'Antonio" tagline="A Curious Mix of Developer and Designer"}
+{layout:set name="body-class" value="home"}
+
+		<div class="row section topspace">
+			<div class="col-md-12">
+				<p class="lead text-center text-muted">Folks like to quote Steve Jobs and say that design is how something works; the sites featured here are my examples of that philosophy. On some, I've built the entire site and on others, I've done interaction or information design; in all of these cases I've implemented the designs as well. I've acted as a bridge between designers and developers to help the former produce designs that the latter can create in code.</p>
+			</div>
+		</div> <!-- / section -->
+		
+		<div class="row section recentworks topspace">			
+			<h2 class="section-title"><span>Recent Works</span></h2>
+			<div class="thumbnails recentworks row">
+			
+  			{exp:channel:entries channel="portfolio" orderby="date" sort="desc" limit="6" paginate="bottom" track_views="two" status="open|Draft" disable="{snippet_channel_disabled_fields}" {if segment_2}category={segment_2}{/if}}
+  			  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
+    				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    					<a class="thumbnail" href="{title_permalink="portfolio/piece"}" rel="bookmark">
+      				  {pf_featured_image}
+        						<span class="img">
+          						<img class="entry-image-small img-rounded" title="{title}" alt="{title}" src="{url:normal}">
+        							<span class="cover">
+        							  <span class="more">See details &rarr;</span>
+                      </span>
+        						</span>
+    					  {/pf_featured_image}
+    						<span class="title">{title}</span>
+    					</a>
+    					<span class="details">
+                {categories backspace="3"}<a {if category_description}alt="{category_description}" title="{category_description}"{/if} href="{path='blog/index'}">{category_name}</a> | {/categories}
+    					</span>
+            </div>
+          {/if}
+				{/exp:channel:entries}
+			</div>
+		</div> <!-- /section -->
+
+		<div class="row section topspace">
+			<h2 class="section-title"><span>Recent Words</span></h2>
+			<div class="thumbnails recentwords row">
+        {exp:reading_time}
+  				{exp:channel:entries channel="blog" orderby="date" sort="desc" limit="3" paginate="bottom" track_views="one" status="open|Draft" disable="{snippet_channel_disabled_fields}" {if segment_2}category={segment_2}{/if}}
+  				  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
+    				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+    					<a class="thumbnail" href="{title_permalink="blog/article"}" rel="bookmark">
+        				{if featured-image}
+        				  {featured-image}
+        						<span class="img">
+          						<img class="entry-image-small img-rounded" title="{title}" alt="{title}" src="{url:normal}">
+        							<span class="cover">
+        							  <span class="more">See post &rarr;</span>
+                      </span>
+        						</span>
+      					  {/featured-image}
+      					{/if}
+    						<span class="title">{title}</span>
+    					</a>
+    					<span class="details">
+                {categories backspace="3"}<a {if category_description}alt="{category_description}" title="{category_description}"{/if} href="{path='blog/index'}">{category_name}</a> | {/categories}
+    					</span>
+            </div>
+{!--
+       				<article class="post col-sm-6">
+      					<header class="entry-header">
+       						<h1 class="entry-title{if status == "Draft"} entry-draft {/if}"><a href="{title_permalink="blog/article"}" rel="bookmark">{title}</a></h1>
+                    {snippet_blog_meta}
+      					</header> 
+      					<div class="entry-content">
+          				{if featured-image}
+          				  {featured-image}
+          						<p class="pull-left"><img class="entry-image-small img-rounded" title="{title}" alt="{title}" src="{url:small}"></p>
+      						  {/featured-image}
+      						{/if}
+      						<p>
+        						{exp:chopper append="&#8230;" words="75" cutoff="<END/>" allow="<p><a><em><strong>"}
+                      {exp:low_replace find="[pull-quote]" replace=""}
+                        {blog_entry}
+                      {/exp:low_replace}
+                    {/exp:chopper}
+                    <a href="{url_title_path="blog/article"}" class="more-link">Continue reading &raquo;</a>
+                  </p>
+      					</div> 
+      				</article><!-- #post-## -->
+--}
+            {/if}
+  				{/exp:channel:entries}
+        {/exp:reading_time}
+      </div>
+		</div> <!-- /section -->
+
