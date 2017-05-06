@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  {exp:channel:entries channel="portfolio" status="Open" limit="1"}
+      <url>
+        <loc>https://dantonio.net</loc>
+        <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+      </url>
+  {/exp:channel:entries}
+  {exp:channel:entries channel="portfolio" status="Open" limit="10000"}
+      <url>
+        <loc>{title_permalink="portfolio/piece"}</loc>
+        <image:image>
+          {if pf_featured_image}
+            {pf_featured_image}
+              <image:loc>{url:large}</image:loc>
+              {if pf_featured_image_caption}
+                <image:caption>{pf_featured_image_caption}</image:caption>
+              {/if}
+            {/pf_featured_image}
+          {/if}
+          {pf_portfolio_images}
+            <image:loc>{pf_portfolio_images:image:large}</image:loc>
+            <image:caption>{pf_portfolio_images:caption}</image:caption>
+          {/pf_portfolio_images}
+        </image:image>
+        <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+      </url>
+  {/exp:channel:entries}
+  {exp:channel:entries channel="blog" status="Open" limit="10000"}
+      <url>
+        <loc>{title_permalink="blog/article"}</loc>
+        <image:image>
+          {if featured-image}
+            {featured-image}
+              <image:loc>{url:large}</image:loc>
+              {if featured_image_caption}
+                <image:caption>{featured_image_caption}</image:caption>
+              {/if}
+            {/featured-image}
+          {/if}
+        </image:image>
+        <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+      </url>
+  {/exp:channel:entries}
+  {!--
+  {exp:channel:categories channel="portfolio" disable="category_fields" style="linear" show_empty="no" status="Open" limit="10000"}
+    <url>
+      <loc>{title_permalink="portfolio/piece"}</loc>
+      <image:image>
+        {if featured-image}
+          {featured-image}
+            <image:loc>{url:large}</image:loc>
+            {if featured_image_caption}
+              <image:caption>{featured_image_caption}</image:caption>
+            {/if}
+            </figure>
+          {/featured-image}
+        {/if}
+      </image:image>
+      <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
+  {/exp:channel:categories}
+  {exp:channel:categories channel="blog" disable="category_fields" style="linear" show_empty="no" status="Open" limit="10000"}
+    <url>
+      <loc>{title_permalink="blog/article"}</loc>
+      <image:image>
+        {if featured-image}
+          {featured-image}
+            <image:loc>{url:large}</image:loc>
+            {if featured_image_caption}
+              <image:caption>{featured_image_caption}</image:caption>
+            {/if}
+            </figure>
+          {/featured-image}
+        {/if}
+      </image:image>
+      <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+      <changefreq>weekly</changefreq>
+      <priority>0.9</priority>
+    </url>
+  {/exp:channel:categories}
+  --}
+</urlset>
