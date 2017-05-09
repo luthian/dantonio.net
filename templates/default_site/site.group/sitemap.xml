@@ -59,14 +59,14 @@
   {/exp:channel:entries}
   {exp:channel:categories channel="portfolio" disable="category_fields" style="linear" show_empty="no" status="Open" limit="10000"}
     <url>
-      <loc>{path='{embed:index_path}'}</loc>
+      <loc>{path='/portfolio/{embed:index_path}'}</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
   {/exp:channel:categories}
   {exp:channel:categories channel="blog" disable="category_fields" style="linear" show_empty="no" status="Open" limit="10000"}
     <url>
-      <loc>{path='{embed:index_path}'}</loc>
+      <loc>{path='/blog/{embed:index_path}'}</loc>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
     </url>
