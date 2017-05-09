@@ -10,6 +10,48 @@
           {exp:reading_time}
   					{exp:channel:entries channel="blog" url_title="{segment_3}" status="open|Draft" paginate="bottom" track_views="one" disable="{snippet_channel_disabled_fields}"}
     				  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
+{!-- Schema.org markup for Google --}
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"BlogPosting",
+    "author":{
+    "@type": "Person",
+    "givenName":"David",
+    "familyName":"D'Antonio",
+    "alternateName":"DDA",
+    "name":"David D'Antonio"
+  },
+  "headline":"{title}",
+	{if featured-image}
+	  {featured-image}
+      "image": {
+        "@type": "ImageObject",
+        "url": "{url:large}",
+        {if featured_image_caption}
+          "caption":"{featured_image_caption}",
+        {/if}
+        "width": {width:large},
+        "height": {height:large}
+      },
+	  {/featured-image}
+	{/if}
+   "publisher": {
+    "@type": "Organization",
+    "name": "Scarlet Begonias Consulting",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{site_url}images/uploads/favicon-single-initial.png",
+      "width": 32,
+      "height": 32
+    }
+  },
+  "mainEntityOfPage":"{title_permalink="blog/article"}",
+  "datePublished":"{entry_date format="%Y-%m-%d"}",
+  "dateModified":"{edit_date format="%Y-%m-%d"}",
+  "articleBody":"{exp:low_replace multiple="yes" find="[pull-quote]|QUOTE|NEWLINE" replace="<aside class=QUOTEpull-quoteQUOTE>{pull_quote}</aside>|\QUOTE|SPACE"}{blog_entry}{/exp:low_replace}"
+}
+</script>  
     					  <header class="entry-header">
       						<h1 class="entry-title {if status == "Draft"} entry-draft{/if}"><a href="{title_permalink="blog/article"}" rel="bookmark">{title}</a></h1>
                   {snippet_blog_article_meta}
