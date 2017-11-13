@@ -6,68 +6,31 @@
   		</div>
 			<div class="col-sm-8 col-sm-offset-1">
 															
- 				<article class="">
+ 				<article class="" itemscope itemtype="http://schema.org/BlogPosting">
           {exp:reading_time}
   					{exp:channel:entries channel="blog" url_title="{segment_3}" status="open|Draft" paginate="bottom" track_views="one" disable="{snippet_channel_disabled_fields}"}
     				  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
-{!-- Schema.org markup for Google --}
-<script type="application/ld+json">
-{
-  "@context":"http://schema.org",
-  "@type":"BlogPosting",
-    "author":{
-    "@type": "Person",
-    "givenName":"David",
-    "familyName":"D'Antonio",
-    "alternateName":"DDA",
-    "name":"David D'Antonio"
-  },
-  "headline":"{title}",
-	{if featured-image}
-	  {featured-image}
-      "image": {
-        "@type": "ImageObject",
-        "url": "{url:large}",
-        {if featured_image_caption}
-          "caption":"{featured_image_caption}",
-        {/if}
-        "width": {width:large},
-        "height": {height:large}
-      },
-	  {/featured-image}
-	{/if}
-   "publisher": {
-    "@type": "Organization",
-    "name": "Scarlet Begonias Consulting",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "{site_url}images/uploads/favicon-single-initial.png",
-      "width": 32,
-      "height": 32
-    }
-  },
-  "mainEntityOfPage":"{title_permalink="blog/article"}",
-  "datePublished":"{entry_date format="%Y-%m-%d"}",
-  "dateModified":"{edit_date format="%Y-%m-%d"}",
-  "articleBody":"{exp:low_replace multiple="yes" find="[pull-quote]|QUOTE|NEWLINE" replace="<aside class=QUOTEpull-quoteQUOTE>{pull_quote}</aside>|\QUOTE|SPACE"}{blog_entry}{/exp:low_replace}"
-}
-</script>  
     					  <header class="entry-header">
-      						<h1 class="entry-title {if status == "Draft"} entry-draft{/if}"><a href="{title_permalink="blog/article"}" rel="bookmark">{title}</a></h1>
+      						<h1 class="entry-title {if status == "Draft"} entry-draft{/if}" itemprop="headline"><a itemprop="mainEntityOfPage" href="{title_permalink="blog/article"}" rel="bookmark">{title}</a></h1>
                   {snippet_blog_article_meta}
+                  {snippet_schema_org_author}
+                  {snippet_schema_org_publisher}
       					</header> 
       					<div class="entry-content clearfix">
           				{if featured-image}
           				  {featured-image}
-        						  <figure><img class="img-responsive img-rounded" alt="{title}" alt="{title}" src="{url:large}">
+        						  <figure itemprop="image" itemscope itemscope itemtype="http://schema.org/ImageObject">
+          						  <img itemprop="url" class="img-responsive img-rounded" alt="{title}" src="{url:large}">
+          						  <span class="hidden" itemprop="height">{height:large}</span>
+          						  <span class="hidden" itemprop="width">{width:large}</span>
         						  {if featured_image_caption}
-                        <figcaption>{featured_image_caption}</figcaption>
+                        <figcaption itemprop="caption">{featured_image_caption}</figcaption>
                       {/if}
         						  </figure>
       						  {/featured-image}
       						{/if}
                   {exp:low_replace find="[pull-quote]" replace="<aside class=QUOTEpull-quoteQUOTE>{pull_quote}</aside>"}
-                    {blog_entry}
+                    <span  itemprop="articleBody">{blog_entry}</span>
                   {/exp:low_replace}
       					</div>
    							<footer class="entry-footer entry-categories clearfix">

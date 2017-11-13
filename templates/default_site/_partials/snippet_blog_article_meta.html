@@ -1,6 +1,9 @@
               <div class="entry-meta clearfix"> 
                 <div class="pull-left posted-on">
                   <time class="entry-date published" date="{edit_date}">Published {edit_date:relative}</time>
+                  <time class="entry-date published hidden" date="{entry_date}" itemprop="datePublished">{entry_date format="{DATE_ISO8601}"}</time>
+                  <time class="entry-date published hidden" date="{edit_date}" itemprop="dateModified">{edit_date format="{DATE_ISO8601}"}</time>
+
                 </div>
                 <div class="pull-right entry-reading-time">
                   <time class="entry-date" date="{finished_reading_time}">Read {finished_reading_time:relative}</time>
