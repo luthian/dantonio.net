@@ -654,6 +654,7 @@ article.piece:last-child {
   font-size: 0.84375rem;
   font-style: italic;
   margin-bottom: 1em;
+  margin-top: 0.7em;
 }
 .entry-content figure img {
   margin: 1em auto 0.25em auto;

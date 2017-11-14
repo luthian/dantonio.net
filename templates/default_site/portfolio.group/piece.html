@@ -57,12 +57,14 @@
                   {/exp:low_replace}
                   <div class="entry-gallery">
                     {pf_portfolio_images}
-                      <figure class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-        						    <a href="{pf_portfolio_images:image:large}" data-toggle="lightbox" data-gallery="portfolio" data-footer="{pf_portfolio_images:caption}">
-                          <img class="img-responsive img-rounded" src="{pf_portfolio_images:image:small}">
-        						    </a>
-                        <figcaption>{pf_portfolio_images:caption}</figcaption>
-                      </figure>
+                      {if pf_portfolio_images:image}
+                        <figure class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+          						    <a href="{pf_portfolio_images:image:large}" data-toggle="lightbox" data-gallery="portfolio" data-footer="{pf_portfolio_images:caption}">
+                            <img class="img-responsive img-rounded" src="{pf_portfolio_images:image:small}">
+          						    </a>
+                          <figcaption>{pf_portfolio_images:caption}</figcaption>
+                        </figure>
+                      {/if}
                     {/pf_portfolio_images}
                   </div>
       					</div>
