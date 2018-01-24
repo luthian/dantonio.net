@@ -5,8 +5,8 @@
       {year_heading}
         <div>{year}</div>
       {/year_heading}
-      <div><a data-toggle="collapse" href="#monthContainer-{month}" aria-expanded="false" aria-controls="monthContainer" class="collapsed"><i class="fa fa-play"></i>&nbsp;&nbsp;{month}</a></div>
-  				<div class="collapse" id="monthContainer-{month}">
+      <div><a data-toggle="collapse" href="#monthContainer-{month}-{year}" aria-expanded="false" aria-controls="monthContainer" class="collapsed"><i class="fa fa-play"></i>&nbsp;&nbsp;{month}</a></div>
+  				<div class="collapse" id="monthContainer-{month}-{year}">
         {exp:channel:entries channel="{embed:channel}" orderby="date" sort="desc" year="{year}" month="{month_num}" status="open|Draft" disable="{snippet_channel_disabled_fields}" dynamic="no"}
 				  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
     				<div {if status == "Draft"} class="entry-draft" {/if}><a href="{url_title_path='{embed:title_path}'}">{title}<div class="sidebar-entry-date">{edit_date format="%l, %M %j"}</div></a></div>

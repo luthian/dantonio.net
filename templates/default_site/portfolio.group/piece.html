@@ -49,13 +49,23 @@
                             </li>
                           {/pf_fonts}
           						  </ul>
+                				{if pf_tools}
+            						  <div class="entry-pf-heading">
+              						  Tools
+            						  </div>
+            						  <ul class="entry-pf-colors">
+                            <li class="entry-pf-color">
+                              <span>{pf_tools}</span>
+                            </li>
+            						  </ul>
+          						  {/if}
         						  </div>
           				  </div>
-      						{/if}
-                  {exp:low_replace find="[pull-quote]" replace="<aside class=QUOTEpull-quoteQUOTE>{pf_pull_quote}</aside>"}
-                    {pf_portfolio_description}
-                  {/exp:low_replace}
-                  <div class="entry-gallery">
+        						{/if}
+                    {exp:low_replace find="[pull-quote]" replace="<aside class=QUOTEpull-quoteQUOTE>{pf_pull_quote}</aside>"}
+                      {pf_portfolio_description}
+                    {/exp:low_replace}
+                  <div class="entry-gallery clearfix">
                     {pf_portfolio_images}
                       {if pf_portfolio_images:image}
                         <figure class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
