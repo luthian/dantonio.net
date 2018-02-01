@@ -8,7 +8,7 @@
   {exp:channel:entries channel="portfolio" status="Open" limit="1"}
       <url>
         <loc>https://dantonio.net</loc>
-        <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+        <lastmod>{edit_date format="%Y-%m-%d"}</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
       </url>
@@ -23,7 +23,7 @@
               {if pf_featured_image_caption}
                 <image:caption>
                   {exp:streeng encode="yes"}
-                    {pf_portfolio_images:caption}
+                    {pf_featured_image_caption}
                   {/exp:streeng}
                 </image:caption>
               {/if}
@@ -42,7 +42,7 @@
           </image:image>
           {/if}
         {/pf_portfolio_images}
-        <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+        <lastmod>{edit_date format="%Y-%m-%d"}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
       </url>
@@ -57,14 +57,14 @@
               {if featured_image_caption}
                 <image:caption>
                   {exp:streeng encode="yes"}
-                    {pf_portfolio_images:caption}
+                    {featured_image_caption}
                   {/exp:streeng}
                 </image:caption>
               {/if}
             {/featured-image}
           {/if}
         </image:image>
-        <lastmod>{edit_date format="%Y-%m-%dT06:00:00+00:00"}</lastmod>
+        <lastmod>{edit_date format="%Y-%m-%d"}</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
       </url>
