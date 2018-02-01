@@ -21,7 +21,11 @@
             {pf_featured_image}
               <image:loc>{url:large}</image:loc>
               {if pf_featured_image_caption}
-                <image:caption>{pf_featured_image_caption}</image:caption>
+                <image:caption>
+                  {exp:streeng encode="yes"}
+                    {pf_portfolio_images:caption}
+                  {/exp:streeng}
+                </image:caption>
               {/if}
             {/pf_featured_image}
           {/if}
@@ -30,7 +34,11 @@
           {if pf_portfolio_images:image != ''}
           <image:image>
             <image:loc>{pf_portfolio_images:image:large}</image:loc>
-            <image:caption>{pf_portfolio_images:caption}</image:caption>
+            <image:caption>
+              {exp:streeng encode="yes"}
+                {pf_portfolio_images:caption}
+              {/exp:streeng}
+            </image:caption>
           </image:image>
           {/if}
         {/pf_portfolio_images}
@@ -47,7 +55,11 @@
             {featured-image}
               <image:loc>{url:large}</image:loc>
               {if featured_image_caption}
-                <image:caption>{featured_image_caption}</image:caption>
+                <image:caption>
+                  {exp:streeng encode="yes"}
+                    {pf_portfolio_images:caption}
+                  {/exp:streeng}
+                </image:caption>
               {/if}
             {/featured-image}
           {/if}
