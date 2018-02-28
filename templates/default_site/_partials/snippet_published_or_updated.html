@@ -1,0 +1,5 @@
+                  {if edit_date == entry_date}
+                    <time class="entry-date published" date="{entry_date}">Published {entry_date:relative}</time>
+                  {if:else}
+                    <time class="entry-date published" date="{edit_date}">Updated {edit_date:relative}</time>
+                  {/if}
