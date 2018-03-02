@@ -1,4 +1,4 @@
-                  {if edit_date < (entry_date + 86400)}
+                  {if entry_date:relative == edit_date:relative}
                     <time class="entry-date published" date="{entry_date}">Published {entry_date:relative}</time>
                   {if:else}
                     <time class="entry-date published" date="{edit_date}">Updated {edit_date:relative}</time>
