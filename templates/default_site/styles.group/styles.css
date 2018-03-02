@@ -400,8 +400,7 @@ img {
   font-weight: bold;
 }
 .panel-cta {
-  -webkit-box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
-          box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
+  box-shadow: 0 0 0 1px #e1e1e1, 0 0 0 3px #fff, 0 0 0 4px #e1e1e1;
   background: #f3f3f3;
   -webkit-border-radius: 0;
   -webkit-background-clip: padding-box;
@@ -448,6 +447,13 @@ img {
   font-size: 12px;
   font-size: 0.75rem;
   padding-bottom: 1em;
+}
+.thumbnails .card {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 0;
+  box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
+  border-radius: 6px;
 }
 .thumbnail {
   display: block;
@@ -659,8 +665,7 @@ article.piece:last-child {
 }
 .entry-content figure img {
   margin: 1em auto 0.25em auto;
-  -webkit-box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
-          box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
+  box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
 }
 .entry-content figure img.noBorder {
   border: none;
@@ -677,8 +682,7 @@ article.piece:last-child {
   max-height: 200px;
   margin-right: 1.5em;
   margin-bottom: 15px;
-  -webkit-box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
-          box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
+  box-shadow: 2px 2px 10px 0px rgba(102, 102, 102, 0.5);
 }
 .entry-content .entry-image {
   margin: 1em auto;
@@ -696,20 +700,26 @@ article.piece:last-child {
 }
 .entry-content .entry-gallery {
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
   -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  -webkit-align-content: stretch;
+      -ms-flex-line-pack: stretch;
+          align-content: stretch;
   -webkit-box-align: start;
+  -webkit-align-items: flex-start;
       -ms-flex-align: start;
           align-items: flex-start;
 }

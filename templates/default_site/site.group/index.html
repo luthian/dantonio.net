@@ -3,7 +3,7 @@
 
 		<div class="row section topspace">
 			<div class="col-md-12">
-				<p class="lead text-center text-muted">Folks like to quote Steve Jobs and say that design is how something works; the sites featured here are my examples of that philosophy. On some, I've built the entire site and on others, I've done interaction or information design; in all of these cases I've implemented the designs as well. I've acted as a bridge between designers and developers to help the former produce designs that the latter can create in code.</p>
+				<p class="lead text-center text-muted">Welcome. I'm a hybrid web designer/developer and a bit of a font nerd. I design clean, usable, and fun interfaces and then do the front-end development to bring them to life. I can talk to both web designers and developers in their native languages, helping both to understand the constraints and challenges the other faces. I love good design and want to see more of it in the world!</p>
 			</div>
 		</div> <!-- / section -->
 		
@@ -14,20 +14,22 @@
   			{exp:channel:entries channel="portfolio" orderby="date" sort="desc" limit="6" paginate="bottom" track_views="two" status="open|Draft" disable="{snippet_channel_disabled_fields}" {if segment_2}category={segment_2}{/if}}
   			  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
     				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-    					<a class="thumbnail" href="{title_permalink="portfolio/piece"}" rel="bookmark">
-      				  {pf_featured_image}
-        						<span class="img">
-          						<img class="entry-image-small img-rounded" title="{title}" alt="{title}" src="{url:normal}">
-        							<span class="cover">
-        							  <span class="more">See details &rarr;</span>
-                      </span>
-        						</span>
-    					  {/pf_featured_image}
-    						<span class="title">{title}</span>
-    					</a>
-    					<span class="details">
-                {categories backspace="3"}<a {if category_description}alt="{category_description}" title="{category_description}"{/if} href="{path='blog/index'}">{category_name}</a> | {/categories}
-    					</span>
+      				<div class="card">
+      					<a class="thumbnail" href="{title_permalink="portfolio/piece"}" rel="bookmark">
+        				  {pf_featured_image}
+          						<span class="img">
+            						<img class="entry-image-small img-rounded" title="{title}" alt="{title}" src="{url:normal}">
+          							<span class="cover">
+          							  <span class="more">See details &rarr;</span>
+                        </span>
+          						</span>
+      					  {/pf_featured_image}
+      						<span class="title">{title}</span>
+      					</a>
+      					<span class="details">
+                  {categories backspace="3"}<a {if category_description}alt="{category_description}" title="{category_description}"{/if} href="{path='blog/index'}">{category_name}</a> | {/categories}
+      					</span>
+      				</div>
             </div>
           {/if}
 				{/exp:channel:entries}
@@ -41,22 +43,24 @@
   				{exp:channel:entries channel="blog" orderby="date" sort="desc" limit="3" paginate="bottom" track_views="one" status="open|Draft" disable="{snippet_channel_disabled_fields}" {if segment_2}category={segment_2}{/if}}
   				  {if status == "open" || (logged_in_username == "dantonio" && status == "Draft")}
     				<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-    					<a class="thumbnail" href="{title_permalink="blog/article"}" rel="bookmark">
-        				{if featured-image}
-        				  {featured-image}
-        						<span class="img">
-          						<img class="entry-image-small img-rounded" title="{title}" alt="{title}" src="{url:normal}">
-        							<span class="cover">
-        							  <span class="more">See post &rarr;</span>
-                      </span>
-        						</span>
-      					  {/featured-image}
-      					{/if}
-    						<span class="title">{title}</span>
-    					</a>
-    					<span class="details">
-                {categories backspace="3"}<a {if category_description}alt="{category_description}" title="{category_description}"{/if} href="{path='blog/index'}">{category_name}</a> | {/categories}
-    					</span>
+      				<div class="card">
+      					<a class="thumbnail" href="{title_permalink="blog/article"}" rel="bookmark">
+          				{if featured-image}
+          				  {featured-image}
+          						<span class="img">
+            						<img class="entry-image-small img-rounded" title="{title}" alt="{title}" src="{url:normal}">
+          							<span class="cover">
+          							  <span class="more">See post &rarr;</span>
+                        </span>
+          						</span>
+        					  {/featured-image}
+        					{/if}
+      						<span class="title">{title}</span>
+      					</a>
+      					<span class="details">
+                  {categories backspace="3"}<a {if category_description}alt="{category_description}" title="{category_description}"{/if} href="{path='blog/index'}">{category_name}</a> | {/categories}
+      					</span>
+      				</div>
             </div>
 {!--
        				<article class="post col-sm-6">
