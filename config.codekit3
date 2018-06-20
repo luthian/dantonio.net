@@ -7,8 +7,15 @@
 		"uuidString": "AACB05F2-3D26-4189-B309-739805AB65A8"
 		}
 	],
-"creatorBuild": "26261",
+"creatorBuild": "26680",
 "files": {
+	"\/.gitignore": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/.gitignore",
+		"oF": 0
+		},
 	"\/.htaccess": {
 		"cB": 0,
 		"ft": 8192,
@@ -4093,6 +4100,7 @@
 	"\/local files\/images\/9-jens-mayer.jpg": {
 		"ft": 16384,
 		"iS": 314766,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/9-jens-mayer.jpg",
 		"oF": 0,
@@ -4103,6 +4111,7 @@
 	"\/local files\/images\/_MG_8970 copy.jpg": {
 		"ft": 16384,
 		"iS": 1446420,
+		"jF": 0,
 		"oA": 1,
 		"oAP": "\/local files\/images\/_MG_8970 copy.jpg",
 		"oF": 0,
@@ -4135,6 +4144,7 @@
 	"\/local files\/images\/bg_head.jpg": {
 		"ft": 16384,
 		"iS": 44976,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/bg_head.jpg",
 		"oF": 0,
@@ -4145,6 +4155,7 @@
 	"\/local files\/images\/bridge_1920x1280.jpg": {
 		"ft": 16384,
 		"iS": 1932680,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/bridge_1920x1280.jpg",
 		"oF": 0,
@@ -4206,6 +4217,7 @@
 	"\/local files\/images\/guy.jpg": {
 		"ft": 16384,
 		"iS": 28418,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/guy.jpg",
 		"oF": 0,
@@ -4216,6 +4228,7 @@
 	"\/local files\/images\/IMG_1490.JPG": {
 		"ft": 16384,
 		"iS": 1985670,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/IMG_1490.JPG",
 		"oF": 0,
@@ -4226,6 +4239,7 @@
 	"\/local files\/images\/IMG_1491.JPG": {
 		"ft": 16384,
 		"iS": 2848660,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/IMG_1491.JPG",
 		"oF": 0,
@@ -4236,6 +4250,7 @@
 	"\/local files\/images\/IMG_1491_shrunk.jpg": {
 		"ft": 16384,
 		"iS": 1954910,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/IMG_1491_shrunk.jpg",
 		"oF": 0,
@@ -4246,6 +4261,7 @@
 	"\/local files\/images\/mac.jpg": {
 		"ft": 16384,
 		"iS": 37478,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/mac.jpg",
 		"oF": 0,
@@ -4267,6 +4283,7 @@
 	"\/local files\/images\/s1.jpg": {
 		"ft": 16384,
 		"iS": 15305,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/s1.jpg",
 		"oF": 0,
@@ -4277,6 +4294,7 @@
 	"\/local files\/images\/s2.jpg": {
 		"ft": 16384,
 		"iS": 39801,
+		"jF": 0,
 		"oA": 0,
 		"oAP": "\/local files\/images\/s2.jpg",
 		"oF": 0,
@@ -4289,6 +4307,17 @@
 		"iS": 12327,
 		"oA": 0,
 		"oAP": "\/local files\/images\/sample_clients.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/local files\/images\/Single Initial (Large).png": {
+		"ft": 32768,
+		"iS": 19310,
+		"oA": 0,
+		"oAP": "\/local files\/images\/Single Initial (Large).png",
 		"oF": 0,
 		"oIPL": 0,
 		"opt": 0,
@@ -8438,6 +8467,13 @@
 		"oAP": "\/templates\/default_site\/_partials\/snippet_channel_disabled_fields.html",
 		"oF": 0
 		},
+	"\/templates\/default_site\/_partials\/snippet_portfolio_meta.html": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/templates\/default_site\/_partials\/snippet_portfolio_meta.html",
+		"oF": 0
+		},
 	"\/templates\/default_site\/_partials\/snippet_schema_org_author.html": {
 		"cB": 0,
 		"ft": 8192,
@@ -8647,7 +8683,8 @@
 	"creationDate": 538513302,
 	"displayValue": "dantonio.net",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "meme-lotr"
+	"iconImageName": "meme-lotr",
+	"iconImageWasSetByUser": 0
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -8655,6 +8692,7 @@
 	"animateCSSInjections": 1,
 	"autoBuildNewItems": 1,
 	"autoprefixerBrowserString": "> 1%, last 2 versions, Firefox ESR, Opera 12.1",
+	"autoprefixerEnableIEGrid": 0,
 	"babelAuxiliaryCommentAfter": "",
 	"babelAuxiliaryCommentBefore": "",
 	"babelConfigFileHandlingType": 0,
@@ -10449,6 +10487,7 @@
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
 		"autoOutputPathStyle": 0,
+		"outputFormat": 0,
 		"quality": 100
 		},
 	"languageDefaultsJS": {
